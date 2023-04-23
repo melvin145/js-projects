@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&family=Roboto&family=Roboto+Condensed:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #11998e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #38ef7d,
+    #11998e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 400px;
+  background-color: white;
+  padding: 40px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+.input__section {
+  margin-bottom: 10px;
+  width: 100%;
+  
+}
+.row{
+      width: 100%;
+      display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+input[type="range"] {
+      width: 75%;
+      appearance: none;
+      border-radius: 3px;
+      outline: none;
+      height: 3.5px;
+      background-color: #dcdcdc;
+}
+.result .bmi{
+      color: #38ef7d;
+      font-size: 2.5rem;
+}
+.category{
+      color: #11998e;
+}

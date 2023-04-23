@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Rockpaperscissor</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="score">
+        <p >Computer:<span id="computer-score">0</span></p>
+        <p>You:<span id="player-score">0</span></p>
+      </div>
+      <div class="options">
+        <div>
+          <button id="rock" onclick="Checker('rock')">
+            <i class="fa-regular fa-hand-back-fist"></i>
+          </button>
+        </div>
+        <div>
+          <button id="scissors" onclick="Checker('scissors')">
+            <i class="fa-regular fa-hand-scissors"></i>
+          </button>
+        </div>
+        <div>
+          <button id="papper" onclick="Checker('paper')">
+            <i class="fa-regular fa-hand"></i>
+          </button>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <p>You choosed <span id="player-choosen"></span></p>
+          <p>Computer choosed <span id="computer-choosen"></span></p>
+          <p id="result" class="result">Lets Go</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
