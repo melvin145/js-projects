@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sidebar menu</title>
+  </head>
+  <body id="bodyid">
+    <h1 class="heading">Hi 👋</h1>
+    <div class="sidebar" id="navbar">
+      <nav class="nav" >
+        <div>
+          <div class="nav__brand">
+            <i class='bx bx-menu nav__toggle' id="toggle" onclick="ShowMenu('toggle','navbar','bodyid')"></i>
+            <a href="#"  class="nav__logo">Bedmicode</a>
+          </div>
+          <div class="nav__list">
+            <a href="#" class="nav__link">
+              <i class='bx bx-home-alt-2 nav_icon' ></i>
+                  <span class="nav__name">Dashboard</span>
+            </a>
+            <a href="#" class="nav__link">
+                  <i class='bx bx-message-minus nav_icon'></i>
+                  <span class="nav__name">Chat</span>
+            </a>
+            <div href="#" class="nav__link collapse">
+                  <i class='bx bx-folder-open nav_icon '></i>
+                  <span class="nav__name">Projects</span>
+                  <i class='bx bx-chevron-down collapse__link'></i>
+
+                  <ul class="collapse__menu">
+                    <a href="#" class="collapse__sublink">Data</a>
+                    <a href="#" class="collapse__sublink">Group</a>
+                    <a href="#" class="collapse__sublink">Members</a>
+                  </ul>
+            </div>
+            <a href="#" class="nav__link">
+                  <i class='bx bx-pie-chart-alt nav_icon'></i>
+                  <span class="nav__name">Analytics</span>
+            </a>
+            <div  href="#" class="nav__link collapse">
+                  <i class='bx bx-group nav_icon'></i>
+                  <span class="nav__name">People</span>
+                  <i class='bx bx-chevron-down collapse__link'></i>
+
+                  <ul class="collapse__menu">
+                    <a href="#" class="collapse__sublink">Data</a>
+                    <a href="#" class="collapse__sublink">Group</a>
+                    <a href="#" class="collapse__sublink">Members</a>
+                  </ul>
+            </div>
+            <a href="#" class="nav__link">
+                  <i class='bx bx-cog nav_icon'></i>
+                  <span class="nav__name">Settings</span>
+            </a>
+          </div>
+        </div>
+
+      <a href="#" class="nav__link">
+        <i class='bx bx-exit nav_icon' ></i>
+            <span class="nav__name">Logout</span>
+      </a>
+
+      </nav>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
