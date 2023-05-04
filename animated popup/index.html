@@ -4,28 +4,35 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <title>Animated Popup</title>
 </head>
 <body>
-      <section class="container">
-            <div class="popup__open">
-                  <button>open modal</button>
+      <section class="modal container">
+            <div class="modal__open">
+                  <button onclick="ShowModal()">open modal</button>
             </div>
 
-            <div class="card">
+            <div class="card" id="cardId">
                   <div class="card__content">
-                        <div class="close__btn" id="close">
-                              
+                        <div class="close__btn close" id="close">
+                              <i class='bx bxs-x-circle'></i>
                         </div>
                   <div class="card__img">
                         <img src="img/star-trophy.png" alt="">
                   </div>
                   <h1 class="card__title">Start now!</h1>
-                  <p class="card__description">Lorem ipsum dolor sit amet consectetur, 
-                        adi dignissimos quibusdam magnam!</p>
+                  <p class="card__description">Lorem ipsum dolor  Id culpa nesciun</p>
+                  <button class="card__btn">
+                        View Status
+                  </button>
+                  <button class="card__link close">
+                        Close
+                  </button>
                   </div>
-                  <button></button>
             </div>
       </section>
+      <script src="script.js"></script>
 </body>
 </html>
