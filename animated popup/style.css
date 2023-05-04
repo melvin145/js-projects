@@ -103,3 +103,11 @@ button{
 .close__btn i{
       font-size: 1.5rem;
 }
+@media screen and (min-width : 545px) {
+      .card__content{
+            margin: auto;
+            width: 380px;
+            border-radius: 1.3rem;
+            background-color: rgb(255, 255, 255);
+      }
+}

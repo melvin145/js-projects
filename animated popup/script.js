@@ -3,7 +3,7 @@ function ShowModal(){
       card.classList.add("showcard");
 }
 function CloseModal(){
-      card.classListr.remove("showcard");
+      card.classList.remove("showcard");
 }
 const closebtn=document.querySelectorAll(".close");
 
