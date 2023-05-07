@@ -16,17 +16,17 @@ body{
       place-items: center;
 }
 .game__container{
-      width: 400px;
+      max-width: 450px;
       margin:auto;
       background-color: var(--primary-color);
-      padding: 2rem 1rem;
+      padding: 1rem;
 }
 .score__board{
       margin-bottom: 2rem;
 }
 .board__container{
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr;
       gap: .3rem;
 }
 .items{
@@ -38,4 +38,7 @@ body{
 }
 .items h1{
       font-size: var(--font-sm);
+}
+.items{
+
 }
