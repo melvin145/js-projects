@@ -23,6 +23,7 @@ body{
 .game__container{
       max-width: 400px;
       margin:auto;
+      border-radius: 5px;
       background-color: var(--primary-color);
       padding: 1rem;
 }
@@ -47,8 +48,9 @@ body{
 }
 .items h1{
       font-size: var(--font-sm);
+      visibility: hidden;
       font-family: var(--font);
 }
-.items{
-
+.active h1{
+      visibility: visible;
 }

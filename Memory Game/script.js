@@ -5,7 +5,18 @@ console.log(board);
 
 function Board(){
       for(let i=0;i<items.length;i++){
-      board.insertAdjacentHTML("beforeend",`<div class="items"><h1>${items[i]}</h1></div>`);
+      board.insertAdjacentHTML("beforeend",`<div class="items">
+      <h1>${items[i]}</h1></div>`);
+      }
 }
+
+function gameChecker(){
+      const item=document.querySelectorAll(".items");
+      let count=0;
+      item.forEach((e)=>e.addEventListener("click",()=>{
+            console.log(e);
+            e.classList.toggle('active');
+      }))
 }
 Board();
+gameChecker()
