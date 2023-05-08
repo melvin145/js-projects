@@ -13,9 +13,8 @@ function Board(){
 function gameChecker(){
       const item=document.querySelectorAll(".items");
       let count=0;
-      item.forEach((e)=>e.addEventListener("click",()=>{
+      items.forEach((e) => e.addEventListener("click",()=>{
             console.log(e);
-            e.classList.toggle('active');
       }))
 }
 Board();
