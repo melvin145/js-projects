@@ -54,3 +54,7 @@ body{
 .active h1{
       visibility: visible;
 }
+.item-remove{
+      display: block;
+      background-color: aliceblue;
+}
