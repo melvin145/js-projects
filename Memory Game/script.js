@@ -1,4 +1,4 @@
-//const items=["🍊"," 🍌","🐶","🚑","🐷","🍔","🍊"," 🍌","🐶","🚑","🐷","🍔"]
+
 
 const items=[{
          'name':'orange',
@@ -51,8 +51,9 @@ items.sort(()=>0.5-Math.random());
 
 function Board(){
       for(let i=0;i<items.length;i++){
-      board.insertAdjacentHTML("beforeend",`<div class="items">
-      <h1>${items[i]['value']}</h1></div>`);
+      let boardItem=`<div class="items" name="${items[i]['name']}">
+                     <h1>${items[i]['value']}</h1></div>`;
+      board.insertAdjacentHTML("beforeend",boardItem);
 
       }
       gameChecker();
@@ -78,7 +79,7 @@ function gameChecker(){
 Board();
 
 function Score(value1,value2){
-      if(value1.innerText==value2.innerText){
+      if(value1.innerText==value2.innerText && value1.attributes['name'].nodeValue!=value2.attributes['name'].nodeValue){
             value1.classList.add('item-remove');
             value2.classList.add('item-remove');
       }
@@ -86,6 +87,6 @@ function Score(value1,value2){
             setTimeout(()=>{
                   value1.classList.remove('active');
                   value2.classList.remove('active');
-            },1200);
+            },1000);
       }
 }
