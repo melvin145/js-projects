@@ -10,6 +10,7 @@
       --background:linear-gradient(to right, #4A00E0, #8E2DE2);
       --primary-color:white;
       --primary-color-alt:rgb(232, 232, 253); 
+      --accent:#b895fd;
       --font-sm:2rem;
       --font:'Poppins',sans-serif;     
       
@@ -30,7 +31,6 @@ body{
 .score__board{
       margin-bottom: 2rem;
       font-family: var(--font);
-      font-size: var(--font-sm);
 }
 .board__container{
       display: grid;
@@ -51,10 +51,28 @@ body{
       visibility: hidden;
       font-family: var(--font);
 }
+
+@keyframes loader{
+      0%{
+            rotate:  Y 45deg;
+      }
+      50%{
+            rotate: Y 90deg;
+      }
+      
+      100%{
+            rotate: Y 0deg;
+      }
+}
+.active{
+      animation: loader .5s;
+      background-color: #eee8f8;
+}
 .active h1{
       visibility: visible;
 }
 .item-remove{
       display: block;
-      background-color: aliceblue;
+      transition: 1s ease;
+      background-color: var(--accent);
 }
