@@ -52,16 +52,13 @@ items.sort(()=>0.5-Math.random());
 function Board(){
       for(let i=0;i<items.length;i++){
       board.insertAdjacentHTML("beforeend",`<div class="items">
-      <h1 onclick="gameCheck(${items[i]})">${items[i]['value']}</h1></div>`);
+      <h1>${items[i]['value']}</h1></div>`);
 
       }
       gameChecker();
 }
 
 
-function gameCheck(){
-      
-}
 function gameChecker(){
      let SelectedItem=[];
      let moveCount=0;
