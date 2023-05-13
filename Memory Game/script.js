@@ -62,14 +62,6 @@ const items = [
   {
     name: "ambulance2",
     value: "🚑",
-  },
-  {
-    name: "dog2",
-    value: "🐷",
-  },
-  {
-    name: "burger2",
-    value: "🍔",
   }
 ];
 console.log(items[0]["name"]);
