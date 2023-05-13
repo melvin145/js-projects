@@ -34,7 +34,7 @@ body{
 }
 .board__container{
       display: grid;
-      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr ;
       gap: .3rem;
 }
 .items{

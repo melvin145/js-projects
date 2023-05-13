@@ -70,31 +70,7 @@ const items = [
   {
     name: "burger2",
     value: "🍔",
-  },
-  {
-    name: "orange3",
-    value: "🍊",
-  },
-  {
-    name: "banana3",
-    value: "🍌",
-  },
-  {
-    name: "dog3",
-    value: "🐶",
-  },
-  {
-    name: "ambulance3",
-    value: "🚑",
-  },
-  {
-    name: "dog3",
-    value: "🐷",
-  },
-  {
-    name: "burger2",
-    value: "🍔",
-  },
+  }
 ];
 console.log(items[0]["name"]);
 const board = document.querySelector(".board__container");
