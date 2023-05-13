@@ -22,7 +22,7 @@ body{
       place-items: center;
 }
 .game__container{
-      max-width: 400px;
+      max-width: 600px;
       margin:auto;
       border-radius: 5px;
       background-color: var(--primary-color);
@@ -34,7 +34,7 @@ body{
 }
 .board__container{
       display: grid;
-      grid-template-columns: 2fr 2fr 2fr 2fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
       gap: .3rem;
 }
 .items{
