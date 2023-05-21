@@ -16,12 +16,12 @@ const items = [
     value: "🚑",
   },
   {
-    name: "dog",
+    name: "pig",
     value: "🐷",
   },
   {
-    name: "burger",
-    value: "🍔",
+    name:'burger',
+    value:"🍔",
   },
   {
     name: "orange2",
@@ -40,28 +40,12 @@ const items = [
     value: "🚑",
   },
   {
-    name: "dog2",
+    name: "pig2",
     value: "🐷",
   },
   {
     name: "burger2",
     value: "🍔",
-  },
-  {
-    name: "orange2",
-    value: "🍊",
-  },
-  {
-    name: "banana2",
-    value: "🍌",
-  },
-  {
-    name: "dog2",
-    value: "🐶",
-  },
-  {
-    name: "ambulance2",
-    value: "🚑",
   }
 ];
 console.log(items[0]["name"]);
