@@ -23,7 +23,10 @@ body{
       max-width: 400px;
       background-color: #ffffff;
       padding: 2em  1.5em;
+      display: flex;
+      gap: .8rem;
       text-align: center;
+      flex-direction: column;
 }
 h1{
       font-size: var(--font-lrg);
@@ -31,9 +34,12 @@ h1{
       font-weight: 400;
 }
 textarea{
-      width: 100%;
+      max-width: 100%;
       border-radius: 5px;
-      border: none;
+      height: 80px;
+      resize: none;
+      padding: 10px 12px;
+      border: 1px solid var(--btn-color);
       outline: none;
 }
 button{
