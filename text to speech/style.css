@@ -20,12 +20,14 @@ body{
       align-items: center;
 }
 .container{
-      max-width: 400px;
+      max-width: 350px;
       background-color: #ffffff;
       padding: 2em  1.5em;
       display: flex;
       gap: .8rem;
+      border-radius: 10px;
       text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       flex-direction: column;
 }
 h1{
@@ -36,7 +38,7 @@ h1{
 textarea{
       max-width: 100%;
       border-radius: 5px;
-      height: 80px;
+      height: 180px;
       resize: none;
       padding: 10px 12px;
       border: 1px solid var(--btn-color);
@@ -46,12 +48,12 @@ button{
       width: 100%;
       font-size: var(--font-m);
       color: var(--primary);
-      padding: .5em 1em;
+      padding: .9em 1em;
       background-color: #7F7EFF;
       border-radius: 5px;
       outline: none;
       border:none;
-      font-weight: 600;
+      font-weight: 400;
       cursor:pointer;
-
+      transition: all ease 0.3s;
 }
