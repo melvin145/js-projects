@@ -3,12 +3,25 @@ const button=document.getElementById('button');
 
 
 function TextSpeech(){
-      console.l
-      const synt=window.speechSynthesis;
-      const text =textArea.value;
+      const synth=window.speechSynthesis;
+      const text=textArea.value;
+      if(!synth.speaking && text){
       const utterance =new SpeechSynthesisUtterance(text);
-      synt.speak(utterance);
-      console.log(text);
-}
+      synth.speak(utterance);
+      }
+
+      if(text.length >50){
+            if(synth.speaking &&  isSpeaking){
+                  button.innerText= 'Pause';
+                  synth.resume();
+                  isSpeaking=false;
+            }
+            else{
+                  button.innerText='Resume';
+                  synth.pause();
+                  isSpeaking=true;
+            }
+      }
+}     
 
 button.addEventListener('click',TextSpeech);
