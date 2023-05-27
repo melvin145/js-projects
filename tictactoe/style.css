@@ -5,10 +5,19 @@ body{
       min-height: 100vh;
 }
 .container{
-      max-width: 300px;
+      max-width: 250px;
+      min-height: 250px;
       margin:auto;
+      width: 100%;
       display: grid;
-      padding: 1.5rem;
+      padding: .6rem;
+      background-color: #cad9ff;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
+      gap: .5rem;
+}
+.column{
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 }
