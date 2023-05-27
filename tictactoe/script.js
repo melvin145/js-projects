@@ -9,7 +9,7 @@ let winConditions=[
       [0,4,8],
       [2,4,6],
       ];
-let options= new Array(9).fill("");
+let options= new Array(9).fill(" ");
 let player="X";
 
 CheckClick()
@@ -21,10 +21,11 @@ function CheckClick(){
 function UpdateBoard(){
       this.innerText=player;
       cellIndex=this.id;
-      player=player=="X"?"O":"X";
-      if(options[cell]!==""){
-            options[cell]
+      if(options[cellIndex]!==""){
+            options[cellIndex]=player;
       }
+      console.log(options);
+      player=player=="X"?"O":"X";
       CheckWin()
 }
 function CheckWin(){
