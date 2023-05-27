@@ -9,9 +9,26 @@ let winConditions=[
       [0,4,8],
       [2,4,6],
       ];
+let options= new Array(9).fill("");
 let player="X";
+
+CheckClick()
+function CheckClick(){
+      column.forEach(col=>col.addEventListener("click",
+      UpdateBoard,{once:true}))
+}
+
 function UpdateBoard(){
       this.innerText=player;
+      cellIndex=this.id;
       player=player=="X"?"O":"X";
+      if(options[cell]!==""){
+            options[cell]
+      }
+      CheckWin()
 }
-column.forEach(col=>col.addEventListener("click",UpdateBoard,{once:true}))
+function CheckWin(){
+      for(let i=0;i<winConditions.length;i++){
+            condition=winConditions[i];
+      }
+}
