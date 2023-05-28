@@ -12,6 +12,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: var(--font);
 }
 
 ul{
@@ -69,6 +70,10 @@ ul{
       width: 100%;
       top: 4.5rem;
       left: 0;
-      dis
+      display: grid;
+      row-gap: 1rem;
+}
+.dropdown__item:hover{
+      color: #4a00e0;
 }
 
