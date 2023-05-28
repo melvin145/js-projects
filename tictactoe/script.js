@@ -24,12 +24,13 @@ function UpdateBoard(){
       if(options[cellIndex]!==""){
             options[cellIndex]=player;
       }
-      console.log(options);
       player=player=="X"?"O":"X";
       CheckWin()
 }
 function CheckWin(){
       for(let i=0;i<winConditions.length;i++){
             condition=winConditions[i];
+            cellA=condition[];
+            console.log(cellA);
       }
 }
