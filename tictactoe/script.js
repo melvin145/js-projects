@@ -25,12 +25,22 @@ function UpdateBoard(){
             options[cellIndex]=player;
       }
       player=player=="X"?"O":"X";
-      CheckWin()
+      let winner=CheckWin();
+      console.log(winner);
 }
 function CheckWin(){
       for(let i=0;i<winConditions.length;i++){
             condition=winConditions[i];
-            cellA=condition[];
-            console.log(cellA);
+            cellA=condition[0];
+            cellB=condition[1];
+            cellC=condition[2];
+            console.log(options[cellA],options[cellB],options[cellC])
+            if(options[cellA]==" " && options[cellB]==" " && options[cellC]==" "){
+                  continue;
+
+            }
+            else if(options[cellA]==options[cellB]==options[cellC]){
+                  return player;
+            }
       }
 }
