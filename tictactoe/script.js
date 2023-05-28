@@ -18,9 +18,8 @@ CheckClick()
 function CheckClick(){
       column.forEach(col=>col.addEventListener("click",
       UpdateBoard,{once:true}))
-      restartbtn.addEventListener("click",RestartGame);
 }
-
+restartbtn.addEventListener("click",RestartGame);
 function UpdateBoard(){
       this.innerText=player;
       cellIndex=this.id;
@@ -54,7 +53,7 @@ function CheckWin(){
             roundwon=false;
       }
       else if(!player.includes("")){
-            statusScreen.innerText="Draw"
+            statusScreen.innerText="Draw";
       }
 }
 

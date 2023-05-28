@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
+
+:root{
+      --body-color: linear-gradient(to bottom, #8e2de2, #4a00e0);
+      --primary-color:#212738;
+      --btn-color:#f4eeff;
+      --font-color:#3d3d3d;
+      --font: 'Poppins', sans-serif;
+}
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+ul{
+      list-style: none;
+}
+.container{
+      background: var(--body-color);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+}
+.dropdown__container{
+      position: relative;
+}
+.dropdown__btn ,.dropdown__item{
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+}
+.dropdown__btn{
+      background-color: var(--btn-color);
+      border-radius: .75rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 1.25rem;
+}
+.dropdown__btn span{
+      font-size: 1.1rem;
+      font-weight: 500;
+}
+.dropdown__icon{
+      font-size: 1.5rem;
+      color: var(--font-color);
+}
+.dropdown__icons{
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+}
+.close,.arrow{
+      position: absolute;
+      font-size: 1.5rem;
+      transition: opacity .1s,transform .4s;
+}
+.close{
+      opacity: 0;
+}
+.dropdown__menu{
+      background-color: var(--btn-color);
+      padding: 1rem 1.25rem;
+      border-radius: .75rem;
+      position: absolute;
+      width: 100%;
+      top: 4.5rem;
+      left: 0;
+      dis
+}
+
