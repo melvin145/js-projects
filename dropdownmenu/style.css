@@ -20,12 +20,14 @@ ul{
 }
 .container{
       background: var(--body-color);
-      min-height: 100vh;
+      min-height: 90vh;
+      max-width: 90;/
       display: grid;
       place-items: center;
 }
 .dropdown__container{
       position: relative;
+      transform: translateY(-5rem);
 }
 .dropdown__btn ,.dropdown__item{
       display: flex;
