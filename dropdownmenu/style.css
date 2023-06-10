@@ -21,7 +21,7 @@ ul{
 .container{
       background: var(--body-color);
       min-height: 90vh;
-      max-width: 90;/
+      max-width: 100%;
       display: grid;
       place-items: center;
 }
@@ -43,7 +43,7 @@ ul{
       padding: 1.25rem;
 }
 .dropdown__btn span{
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 500;
 }
 .dropdown__icon{
@@ -62,6 +62,12 @@ ul{
       transition: opacity .1s,transform .4s;
 }
 .close{
+      opacity: 0;
+}
+.active{
+      opacity: 1;
+}
+.hidden{
       opacity: 0;
 }
 .dropdown__menu{
