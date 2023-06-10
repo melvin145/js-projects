@@ -1,12 +1,10 @@
-const dropdownMenu=document.getElementById("dropdownmenu");
-const arrowIcon=document.getElementById("arrow");
-const close=document.getElementById("close");
-console.log(arrowIcon);
-function ToggleIcon(){
-      console.log("hi")
-      arrowIcon.addEventListener("click",()=>{
-            arrowIcon.classList.add("hidden");
-            close.classList.add("active");
+const showDropdown=(content,button)=>{
+      const dropdownContent=document.getElementById(content),
+            dropdownButton=document.getElementById(button)
+
+      dropdownButton.addEventListener('click',()=>{
+            dropdownContent.classList.toggle("show__dropdown");
       })
 }
-ToggleIcon()
+
+showDropdown('dropdowncontainer','dropdownBtn');
