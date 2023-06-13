@@ -2,12 +2,14 @@ const api_url='https://api.weatherapi.com/v1/current.json?key=ded3085a2bb042a6a3
 
 async function getapi(api_url){
       let response=await fetch(api_url);
-      console.log(await response.json());
+      result = await response.json();
+      return result;
 }
 
 function ShowDetails(){
       const temp=document.getElementById("tempreature");
-      const city=document.getElementById("city")
+      const city=document.getElementById("city");
+      result=getapi(api_url);
+      console.log(result)
 }
-
-getapi(api_url);
+ShowDetails()
