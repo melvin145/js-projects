@@ -11,7 +11,6 @@ const ShowDetails=async () =>{
             "temp":a['current']['temp_c'],
             "climate":a['current']['condition']['text']
       }
-      console.log(data);
       temp.innerText=data["temp"];
       city.innerText=data['city'];
 }
