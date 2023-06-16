@@ -1,27 +1,17 @@
-
-const api_url='https://api.weatherapi.com/v1/current.json?key=ded3085a2bb042a6a38165015231306&q=japan';
+const temp=document.getElementById("tempreature");
+const city=document.getElementById("city");
+const image=document.getElementById("image");
+const api_url='https://api.openweathermap.org/data/2.5/weather?q={london}&appid={548e9d7e8915c24ab66b4980740b2bc5}';
 let response=fetch(api_url).then((response) =>{return response.json()});
+
 const ShowDetails=async () =>{
-      const temp=document.getElementById("tempreature");
-      const city=document.getElementById("city");
-      const image=document.getElementById("image");
       const a=await response;
-      console.log(a);   
-      let data={
-            "city":a['location']['name'],
-            "temp":a['current']['temp_c'],
-            "climate":a['current']['condition']['text']
-      }
+      console.log(a)
       let weather_img={
-            "sunny":"img/1(1).png",
+            "Sunny":"img/1(1).png",
             "cloudy":"img/2.png",
             "Partly cloudy":"img/5.png",
       }
-      console.log(data['climate'])
-      image.src=weather_img[data['climate']];
-      console.log(image)
-      temp.innerText=data["temp"];
-      city.innerText=data['city'];
 }
 
 ShowDetails()
