@@ -1,0 +1,60 @@
+
+
+*{
+      margin: 0;
+      padding: 0;
+}
+.main__container{
+      width: 100%;
+      min-height: 100vh;
+      background-color: aliceblue;
+      display: grid;
+      place-items: center;
+}
+.container{
+      max-width: 410px;
+      background: url('img/layered-waves-haikei.svg');
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      border-radius: 15px;
+      padding: 2rem;
+      background-repeat: no-repeat;
+}
+.search{
+      text-align: center;
+}
+.search input{
+      width: 70%;
+      height: 16px;
+      border-radius: 5px;
+      outline: none;
+      padding: .5rem;
+}
+.search__btn{
+      padding: .5rem 1.5rem;
+      color: black;
+      background-color: white;
+      border-radius: 3px;
+      border:none;
+
+}
+.search__btn i{
+      font-size: 1rem;
+      height: 100%;
+}
+.result{
+      max-width: 100%;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 1rem 2rem;
+     min-height: 30vh;
+      
+}
+.left{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+}
