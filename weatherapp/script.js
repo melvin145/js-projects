@@ -34,7 +34,7 @@ searchbtn.addEventListener('click',getWeather);
             inputVal="";
             fetch(api_url).then((response)=>response.json()).then((data)=>{
                   console.log(data);
-                  temp.innerText=Math.floor(data['main']['temp']);
+                  temp.innerText=Math.floor(data['main']['temp'])+"°c";
                   city.innerText=data['name'];
                   weather.innerText=data['weather'][0]['main'];
                   weatherdesc.innerText=data['weather'][0]['description'];
