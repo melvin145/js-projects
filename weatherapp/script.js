@@ -12,7 +12,18 @@ searchbtn.addEventListener('click',getWeather);
       const weather=document.getElementById("weather");
       let weatherdesc=document.getElementById("weatherdesc")
       let weather_img={
-            "Clouds":"/"
+            "Clouds":"img/1(1).png",
+            "Thunderstorm":"img/4.png",
+            "Rain":"img/3.png",
+            "Drizzle":"img/5(1).png",
+            'Mist':'img\nt_fog@2x.png',
+            'Snow':'img\flurries@2x.png',
+            'Mist':'https://openweathermap.org/img/w/50d.png',
+            'Smoke':'https://openweathermap.org/img/w/50d.png',
+            'Haze':'https://openweathermap.org/img/w/50d.png',
+            'Fog':'https://openweathermap.org/img/w/50d.png',
+            'Dust':'https://openweathermap.org/img/w/50d.png',
+
       }
       const api_url=`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${api_key}&units=metric`;
       let inputVal=input.value;
@@ -26,6 +37,8 @@ searchbtn.addEventListener('click',getWeather);
                   temp.innerText=Math.floor(data['main']['temp']);
                   city.innerText=data['name'];
                   weather.innerText=data['weather'][0]['main'];
+                  weatherdesc.innerText=data['weather'][0]['description'];
+                  image.src=weather_img[data['weather'][0]['main']];
 
             })
       }
