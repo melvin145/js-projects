@@ -25,17 +25,18 @@
 .search{
  position: relative;  
  width: 100%;
- height: 35px;
+ height:40px;
      
 }
 .search #input{
-      width: calc(100% - 20px);
+      width: calc(100% - 21px);
       height: 100%;
       border-radius: 5px;
       border: none;
       padding-left: 10px;
       font-size: 1rem;
       font-weight: 400;
+      border: 1px soid black;
       color: #545454;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -44,7 +45,7 @@
       top: 0px;
       bottom:0px;
       margin: auto;
-      right: 10px;
+      right: 9px;
       display: grid;
       place-content: center;
 }
@@ -52,8 +53,8 @@
       width: 45px;
       text-align: center;
       background-color: #1f1f1f;
-      height: 35px;
-      border: 1px solid #030303;
+      height: 40px;
+      border: none;
       border-radius:0  5px 5px 0px ;
 }
 .search__btn i{
@@ -64,9 +65,9 @@
 .result{
       max-width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 2fr;
       gap: 5px;
-      margin-top: 15px;
+      margin-top: 25px;
       
 }
 .left{
@@ -77,6 +78,24 @@
 .left img{
       width: 100px;
 
+}
+.other__info{
+      color: #b8cdf0;
+
+      padding: .5rem;
+      width: 100%;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 20px;
+}
+.wind,.temp_max,.humidity{
+      font-size: 1rem;
+}
+#windval,#tempval,#humval{
+      font-size: .8rem;
+      color: #c9c9c9;
 }
 #weather{
       font-size: 2.7rem;
@@ -99,4 +118,31 @@
       font-size: 3.5rem;
       padding-top: 15px;
       color: white;
+}
+@media screen  and (min-width:400px){
+      .container{
+            max-width: 400px;
+      }
+      #weather{
+            font-size: 3.2rem;
+            color: rgb(232, 232, 232);
+      }
+      #weatherdesc{
+            font-size: 1.2rem;
+            color: rgb(155, 195, 255);
+            font-weight: 400;
+      }
+      #city{
+            font-size: 1rem;
+            color: rgb(209, 211, 255);
+      }
+      .right{
+            justify-self: flex-end;
+      
+      }
+      #tempreature{
+            font-size: 4rem;
+            padding-top: 15px;
+            color: white;
+      }
 }

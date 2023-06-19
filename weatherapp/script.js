@@ -10,11 +10,15 @@ searchbtn.addEventListener('click',getWeather);
       const city=document.getElementById("city");
       const image=document.getElementById("image");
       const weather=document.getElementById("weather");
+      const wind =document.getElementById("windval");
+      const humidity=document.getElementById("humval");
+      const temp_max=document.getElementById("tempval");
       let weatherdesc=document.getElementById("weatherdesc")
       let weather_img={
             "Clouds":"img/1(1).png",
             "Thunderstorm":"img/4.png",
             "Rain":"img/3.png",
+            "Clear":"img/Sun.png",
             "Drizzle":"img/5(1).png",
             'Mist':'img\nt_fog@2x.png',
             'Snow':'img\flurries@2x.png',
@@ -37,6 +41,9 @@ searchbtn.addEventListener('click',getWeather);
                   temp.innerText=Math.floor(data['main']['temp'])+"°c";
                   city.innerText=data['name'];
                   weather.innerText=data['weather'][0]['main'];
+                  humidity.innerText=data['main']['humidity']+"%";
+                  temp_max.innerText=Math.floor(data['main']['temp_max'])+"°c";
+                  wind.innerHTML=data['wind']['speed'];
                   weatherdesc.innerText=data['weather'][0]['description'];
                   image.src=weather_img[data['weather'][0]['main']];
 
