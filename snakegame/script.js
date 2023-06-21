@@ -13,14 +13,7 @@ function main(){
                   DrawSnake();
             },1000
       )
-      /*setTimeout(
-            function StartGame(){
-                  Clearboard();
-                  MoveSnake();
-                  DrawSnake();
-                  main();
-            },100)*/
-}
+      }
 
 
 function Clearboard(){
