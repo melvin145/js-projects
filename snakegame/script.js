@@ -11,6 +11,7 @@ function main(){
                   Clearboard();
                   MoveSnake();
                   DrawSnake();
+                  change__direction();
             },1000
       )
       }
@@ -43,5 +44,14 @@ function change__direction(event){
       const DOWN_KEY=40;
 
       const keypressed=event.keyCode;
-      
+      let goingright=dx===10;
+      let goingleft=dx===-10;
+      let goingup=dy==-10;
+      let goingdown=dy===10;
+
+      if(keypressed==LEFT_KEY && !goingLeft){
+            dx=10;
+            dy=0;
+      }
+      if(keypressed==UP_KEY && !)
 }
