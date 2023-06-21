@@ -1,7 +1,10 @@
 const gameBoard=document.getElementById("gameBoard");
 const snake=[{x:50,y:50},{x:40,y:50},{x:30,y:50}]
 console.log(snake);
+let dx=10;
+let dy=0;
 const ctx=gameBoard.getContext("2d");
+document.addEventListener("keydown",change__direction)
 
 main();
 
@@ -11,7 +14,6 @@ function main(){
                   Clearboard();
                   MoveSnake();
                   DrawSnake();
-                  change__direction();
             },1000
       )
       }
@@ -31,8 +33,6 @@ function DrawSnake(){
       })
 }
 function MoveSnake(){
-      let dx=10;
-      let dy=0;
       const head={x:snake[0].x+dx,y:snake[0].y+dy}
       snake.unshift(head);
       snake.pop();
@@ -42,16 +42,24 @@ function change__direction(event){
       const RIGHT_KEY=39;
       const UP_KEY=38;
       const DOWN_KEY=40;
-
       const keypressed=event.keyCode;
+      console.log(keypressed)
       let goingright=dx===10;
       let goingleft=dx===-10;
       let goingup=dy==-10;
       let goingdown=dy===10;
 
-      if(keypressed==LEFT_KEY && !goingLeft){
-            dx=10;
+      if(keypressed==LEFT_KEY && !goingright){
+            dx=-10;
             dy=0;
       }
-      if(keypressed==UP_KEY && !)
+      if(keypressed==UP_KEY && !goingdown){
+            dx=0;
+            dy=10;
+      }
+      if (keypressed === DOWN_KEY && !goingup)
+      {    
+           dx = 0;
+           dy = 10;
+      }
 }
