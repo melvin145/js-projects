@@ -55,11 +55,15 @@ function change__direction(event){
       }
       if(keypressed==UP_KEY && !goingdown){
             dx=0;
-            dy=10;
+            dy=-10;
       }
       if (keypressed === DOWN_KEY && !goingup)
       {    
            dx = 0;
            dy = 10;
+      }
+      if( keypressed==RIGHT_KEY && !goingleft){
+            dx=10;
+            dy=0;
       }
 }
