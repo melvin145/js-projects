@@ -1,5 +1,7 @@
 const gameBoard=document.getElementById("gameBoard");
+const scoreboard=document.getElementById("score");
 const snake=[{x:60,y:50},{x:55,y:50},{x:50,y:50},{x:45,y:50}]
+let score=0;
 let foodx;
 let foody;
 let dx=5;
@@ -16,7 +18,7 @@ function main(){
                   DrawSnake();
                   checkGame();
                   DrawFood();
-            },1000,
+            },1000/7,
       )}
       CreateFood();
 
@@ -36,7 +38,14 @@ function DrawSnake(){
 function MoveSnake(){
       const head={x:snake[0].x+dx,y:snake[0].y+dy}
       snake.unshift(head);
+      if(snake[0].x==foodx && snake[0].y==foody){
+            score+=1;
+            scoreboard.innerText=score
+            CreateFood();
+      }
+      else{
       snake.pop();
+      }
 }
 function change__direction(event){
       const LEFT_KEY=37;
@@ -74,14 +83,15 @@ function DrawFood(){
 }
 function CreateFood(){
       function randomFood(min,max){
-            return Math.round((Math.random() * (max-min)+min)/5)*5;
+            return Math.round((Math.random() * (max-min)+min)/10)*10;
       }
-      foodx=randomFood(0,gameBoard.width);
-      foody=randomFood(0,gameBoard.width);
+      foodx=randomFood(0,gameBoard.width-40);
+      foody=randomFood(0,gameBoard.height-40);
+      console.log(foodx)
+      console.log(foody)
 }
 
 function checkGame(){
-      console.log(gameBoard.width)
       if(snake[0].x>=gameBoard.width){
             console.log("helo");
       }
