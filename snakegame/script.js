@@ -4,6 +4,7 @@ const snake=[{x:60,y:50},{x:55,y:50},{x:50,y:50},{x:45,y:50}]
 let score=0;
 let foodx;
 let foody;
+let running=true;
 let dx=5;
 let dy=0;
 const ctx=gameBoard.getContext("2d");
@@ -11,6 +12,7 @@ document.addEventListener("keydown",change__direction);
 
 main();
 function main(){
+      if(running==true){
       setInterval(
             function StartGame(){
                   Clearboard();
@@ -18,8 +20,10 @@ function main(){
                   DrawSnake();
                   checkGame();
                   DrawFood();
+                  CheckGameOver();
             },1000/7,
       )}
+      }
       CreateFood();
 
 function Clearboard(){
@@ -94,5 +98,28 @@ function CreateFood(){
 function checkGame(){
       if(snake[0].x>=gameBoard.width){
             console.log("helo");
+      }
+}
+function CheckGameOver(){
+      switch(true){
+            case (snake[0].x>gameBoard.width):
+                  console.log("heloo");
+                  running=false;
+                  break;
+            case(snake[0].x<0):
+                  running=false;
+                  break;
+            case(snake[0].y>gameBoard.height):
+                  running=false;
+                  break;
+            case(snake[0].y<0):
+                  running=false;
+                  break;
+      }
+      for(let i=1;i<snake.length;i++){
+            if(snake[0].x==snake[i].x && snake[0].y==snake[i].y){
+                  running=false;
+                  break;
+            }
       }
 }
