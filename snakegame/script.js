@@ -1,30 +1,50 @@
 const gameBoard=document.getElementById("gameBoard");
 const scoreboard=document.getElementById("score");
-const snake=[{x:60,y:50},{x:55,y:50},{x:50,y:50},{x:45,y:50}]
+let snake=[{x:60,y:50},{x:55,y:50},{x:50,y:50},{x:45,y:50}]
 let score=0;
 let foodx;
 let foody;
-let running=true;
 let dx=5;
+let running=true;
 let dy=0;
 const ctx=gameBoard.getContext("2d");
+const resetbtn=document.getElementById("resetbtn")
 document.addEventListener("keydown",change__direction);
 
-main();
-function main(){
-      if(running==true){
-      setInterval(
-            function StartGame(){
-                  Clearboard();
-                  MoveSnake();
-                  DrawSnake();
-                  checkGame();
-                  DrawFood();
-                  CheckGameOver();
-            },1000/7,
-      )}
+
+CreateFood();
+resetbtn.addEventListener("click",ResetGame);
+
+
+
+gameStart();
+
+
+function gameStart(){
+    running= true;
+    scoreboard.textContent = score;
+    CreateFood();
+    DrawFood();
+    nextTick();
+
+};
+
+function nextTick() {
+      if (running){
+      setTimeout(function ontick(){
+      Clearboard();
+      DrawFood();
+      MoveSnake();
+      DrawSnake();
+      CheckGameOver();
+      // Repeat
+      nextTick();
+    }, 100)
       }
-      CreateFood();
+      else{
+            displayGameOver();
+      }
+  }
 
 function Clearboard(){
       ctx.fillStyle="white";
@@ -91,26 +111,18 @@ function CreateFood(){
       }
       foodx=randomFood(0,gameBoard.width-40);
       foody=randomFood(0,gameBoard.height-40);
-      console.log(foodx)
-      console.log(foody)
 }
 
-function checkGame(){
-      if(snake[0].x>=gameBoard.width){
-            console.log("helo");
-      }
-}
 function CheckGameOver(){
       switch(true){
             case (snake[0].x>gameBoard.width):
-                  console.log("heloo");
                   running=false;
                   break;
             case(snake[0].x<0):
                   running=false;
                   break;
             case(snake[0].y>gameBoard.height):
-                  running=false;
+                  running =false;
                   break;
             case(snake[0].y<0):
                   running=false;
@@ -118,8 +130,23 @@ function CheckGameOver(){
       }
       for(let i=1;i<snake.length;i++){
             if(snake[0].x==snake[i].x && snake[0].y==snake[i].y){
-                  running=false;
+                  running = false;
                   break;
             }
       }
+}
+
+function displayGameOver(){
+      ctx.font="20px MV Boli";
+      ctx.fillStyle="black";
+      ctx.textAlign="center";
+      ctx.fillText("GAME OVER",gameBoard.width/2,gameBoard.height/2);
+}
+function ResetGame(){
+      score=0;
+      snake=[{x:60,y:50},{x:55,y:50},{x:50,y:50},{x:45,y:50}]
+      dx=5;
+      dy=0;
+      running=true;
+      gameStart();
 }
