@@ -9,7 +9,7 @@ function ShowMenu(toggleId,navbarId,bodyId){
 const link=document.querySelectorAll(".nav__link");
 function colorLink(){
       link.forEach(e=>e.classList.remove("active"))
-      
+      this.classList.add("active");
 }
 
 link.forEach((e)=>{
