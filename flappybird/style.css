@@ -1,0 +1,38 @@
+.main__container{
+      min-height: 100vh;
+}
+.game__container{
+      max-width: 95%;
+      margin: auto;
+      position: relative;
+      background-color: red;
+      width: 100%;
+}
+.sky{
+      background-color:aqua;
+      height: 400px;
+}
+.ground{
+      background-color: green;
+      height: 50px;
+}
+.pipe_top{
+      position: absolute;
+      top: 0;
+      left: 180px;
+      height: 150px;
+      background-color: black;
+}
+.pipe_bottom{
+      position: absolute;
+      bottom: 50px;
+      background-color: black;
+      left: 180px;
+      height: 200px;
+}
+.bird{
+      position: absolute;
+      left: 200px;
+      bottom: 200px;
+      background-color:yellow;
+}
