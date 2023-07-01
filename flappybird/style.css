@@ -1,20 +1,28 @@
+*{
+      margin: 0;
+      padding: 0;
+}
+
 .main__container{
       min-height: 100vh;
 }
 .game__container{
-      max-width: 95%;
-      margin: auto;
+      max-width: 100%;
       position: relative;
-      background-color: red;
       width: 100%;
+      min-height: 100vh;
 }
 .sky{
       background-color:aqua;
-      height: 400px;
+      height: 100vh;
 }
 .ground{
       background-color: green;
-      height: 50px;
+      height: 70px;
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
 }
 .pipe_top{
       position: absolute;
@@ -38,15 +46,13 @@
 }
 .obstaclebottom{
       position: absolute;
-      bottom: 50px;
       width: 50px;
-      height: 130px;
+      height: 300px;
       background-color: black;
 }
 .obstacletop{
       position: absolute;
-      top: 0px;
       width: 50px;
-      height: 200px;
+      height: 300px;
       background-color: black;
 }
