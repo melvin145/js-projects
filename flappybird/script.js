@@ -5,7 +5,6 @@ let gravity=2;
 let BirdBottom=200;
 
 gameContainer.addEventListener('click',MoveBird);
-CreateObstacle();
 function StartGame(){
       BirdBottom-=gravity;
       bird.style.bottom=BirdBottom+"px";
@@ -19,13 +18,28 @@ function MoveBird(){
 
 
 function CreateObstacle(){
-      let obstacleTop='<div class="obstacletop"></div';
-      let obstaclebottom='<div class="obstaclebottom></div>';
-      console.log(obstacleTop)
-      gameContainer.insertAdjacentHTML("afterbegin",obstacleTop);
-      gameContainer.insertAdjacentHTML("afterbegin",obstaclebottom);
+      let obstacleLeft=300;
+      let obstacleTop=document.createElement('div');
+      obstacleTop.classList.add('obstacletop');
+      let obstaclebottom=document.createElement('div');
+      obstaclebottom.classList.add('obstaclebottom');
+      obstacleTop.style.height=Math.random()*300 +'px'
+      obstacleTop.style.left=obstacleLeft + 'px';
+      obstaclebottom.style.left=obstacleLeft + 'px';
+      gameContainer.appendChild(obstacleTop);
+      gameContainer.appendChild(obstaclebottom);
+      setInterval(MoveObstacle,1000);
+      function MoveObstacle(){
+            obstacleLeft-=20;
+            obstacleTop.style.left=obstacleLeft + 'px';
+            obstaclebottom.style.left=obstacleLeft + 'px'
+             if(obstacleLeft==-50){
+                  clearInterval(timerId);
+                  gameContainer.removeChild(obstacleTop);
+                  gameContainer.removeChild(obstaclebottom);
+            }
+      }
 }
-
 function GameOver(){
       console.log(BirdBottom);
       if(BirdBottom<50){
