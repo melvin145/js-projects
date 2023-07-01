@@ -5,10 +5,9 @@ let gravity=2;
 let BirdBottom=200;
 
 gameContainer.addEventListener('click',MoveBird);
-
+CreateObstacle();
 function StartGame(){
       BirdBottom-=gravity;
-      console.log(BirdBottom)
       bird.style.bottom=BirdBottom+"px";
 }
 
@@ -20,10 +19,11 @@ function MoveBird(){
 
 
 function CreateObstacle(){
-      let obstacleTop=document.createElement;
-      let obstaclebottom=document.createElement('div');
-
-
+      let obstacleTop='<div class="obstacletop"></div';
+      let obstaclebottom='<div class="obstaclebottom></div>';
+      console.log(obstacleTop)
+      gameContainer.insertAdjacentHTML("afterbegin",obstacleTop);
+      gameContainer.insertAdjacentHTML("afterbegin",obstaclebottom);
 }
 
 function GameOver(){
