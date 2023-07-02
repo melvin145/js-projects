@@ -18,6 +18,8 @@ let pipex=300;
 let pipey=0;
 let pipeArray=[];
 let xVelcoity=-2;
+let score=0;
+let gameOver=false;
 
 let gravity=0.5;
 let ctx=gameContainer.getContext('2d');
@@ -38,7 +40,7 @@ window.onload=()=>{
       ctx.drawImage(birdImage,bird.x,bird.y,bird.y,bird.height)}
       update();
       TopPipeImg=new Image()
-      TopPipeImg.src='toppippng';
+      TopPipeImg.src='toppipe.png';
       BottomPipeImg=new Image();
       BottomPipeImg.src="bottompipe.png"
       setInterval(PlacePipe,1500);
@@ -57,7 +59,7 @@ function update(){
             pipe.x+=xVelcoity;
             ctx.drawImage(pipe.img,pipe.x,pipe.y,pipe.width,pipe.height);
       if (!pipe.passed && bird.x > pipe.x + pipe.width) {
-            score += 0.5; //0.5 because there are 2 pipes! so 0.5*2 = 1, 1 for each set of pipes
+            score += 0.5;
             pipe.passed = true;
             }
       
@@ -65,9 +67,21 @@ function update(){
             gameOver = true;
       }
       }
+      while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
+            pipeArray.shift(); 
+        }
+    
+
+        ctx.fillStyle = "white";
+        ctx.font="25px sans-serif";
+        ctx.fillText(score, 5, 45);
+    
+        if (gameOver) {
+            ctx.fillText("GAME OVER", 5, 90);
+        }
 }
 function MoveBird(){
-      bird.y-=25;
+      bird.y-=20;
       if (gameOver) {
             bird.y = birdY;
             pipeArray = [];
@@ -82,7 +96,7 @@ function PlacePipe(){
             return;
         }
       let randomPipeY = pipey - pipeHeight/4 - Math.random()*(pipeHeight/2);
-      let openingspace=Board.height/5
+      let openingspace=Board.height/4
       let toppipe={
             'img':TopPipeImg,
             'x':pipex,
@@ -105,8 +119,8 @@ function PlacePipe(){
 
 }
 function detectCollision(a, b) {
-      return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
-             a.x + a.width > b.x &&   //a's top right corner passes b's top left corner
-             a.y < b.y + b.height &&  //a's top left corner doesn't reach b's bottom left corner
-             a.y + a.height > b.y;    //a's bottom left corner passes b's top left corner
+      return a.x < b.x + b.width && 
+             a.x + a.width > b.x &&  
+             a.y < b.y + b.height && 
+             a.y + a.height > b.y; 
   }
