@@ -38,7 +38,7 @@ window.onload=()=>{
       ctx.drawImage(birdImage,bird.x,bird.y,bird.y,bird.height)}
       update();
       TopPipeImg=new Image()
-      TopPipeImg.src='toppipe.png';
+      TopPipeImg.src='toppippng';
       BottomPipeImg=new Image();
       BottomPipeImg.src="bottompipe.png"
       setInterval(PlacePipe,1500);
